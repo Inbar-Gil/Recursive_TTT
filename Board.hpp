@@ -5,11 +5,19 @@
 
 #ifndef RECURSIVETTT_BOARD_HPP
 #define RECURSIVETTT_BOARD_HPP
+#define BOARD_SIZE 9
+#define WIN_SCORE 100
+#define TIE_SCORE 50
 
 
 enum Move
 {
-	X = 1, O = -1
+	X = 1, O = 2
+};
+
+enum State
+{
+	W = 1, T = 3, L = 2, E = 0
 };
 
 
@@ -20,51 +28,27 @@ private:
 
 	int _count_X();
 
-	int _count_O();
+	void _updateState();
 
 public:
 	int state;
 
 	int score;
 
-	void playMove(Move nextMove, int loc);
-
-	int updateScore();
-
 	Board();
 
 	~Board();
 
+	int playMove(Move nextMove, int loc);
+
+	int updateScore();
+
 };
 
 
-int Board::_count_X()
-{
-	int counter = 0;
-	for (int i = 0; i < 9; i++)
-	{
-		if (_board[i] == Move(X))
-		{
-			int x = 5;
-		}
-	}
-	return 0;
-}
-
-int Board::_count_O()
-{
-	return 0;
-}
-
-void Board::playMove(Move nextMove, int loc)
-{
-	std::cout << nextMove;
-	_board[loc] = nextMove;
-}
-
 Board::Board()
 {
-	_board = new int[9 * sizeof(int)];
+	_board = new int[BOARD_SIZE * sizeof(int)];
 	state = 0;
 	score = 0;
 }
@@ -74,17 +58,125 @@ Board::~Board()
 	delete _board;
 }
 
+int Board::_count_X()
+{
+	int counter = 0;
+	for (int i = 0; i < BOARD_SIZE; i++)
+	{
+		if (_board[i] == Move(X))
+		{
+			counter++;
+		}
+	}
+	return counter;
+}
+
+int Board::playMove(Move nextMove, int loc)
+{
+	if (_board[loc])
+	{
+		return -1;
+	}
+	_board[loc] = nextMove;
+	_updateState();
+	return state;
+}
+
 int Board::updateScore()
 {
-	if (state == 1)
+	score = 0;
+	if (state == W)
 	{
-		return 100;
+		score = WIN_SCORE;
 	}
-	if (state == -1)
+	else if (state == L)
 	{
-		
+		score = -WIN_SCORE;
 	}
-	return 0;
+	else if (state == T)
+	{
+		if (_count_X() >= 5)
+		{
+			score = TIE_SCORE;
+		}
+		else
+		{
+			score = -TIE_SCORE;
+		}
+	}
+	else
+	{
+		for (int i = 0; i < BOARD_SIZE; i++)
+		{
+			int taken = (int) (bool) (_board[i]);
+			if (!(i % 2))
+			{
+				if (i == 4)
+				{
+					score = score + taken * 4;
+				}
+				else
+				{
+					score = score + taken * 3;
+				}
+			}
+			else
+			{
+				score = score + taken * 2;
+			}
+		}
+	}
+	return score;
+}
+
+void Board::_updateState()
+{
+	int i = 0;
+	while (true)
+	{
+		if (i == 9)
+		{
+			state = T;  // if all squares are full then it's considered a Tie (even if it's not)
+			return;
+		}
+		if (!_board[i])  //breaks if any square is empty
+		{
+			break;
+		}
+		i++;
+	}
+	if (_board[0] == _board[1] && _board[1] == _board[2])
+	{
+		state = _board[0];
+	}
+	else if (_board[3] == _board[4] && _board[4] == _board[5])
+	{
+		state = _board[3];
+	}
+	else if (_board[6] == _board[7] && _board[7] == _board[8])
+	{
+		state = _board[6];
+	}
+	else if (_board[0] == _board[3] && _board[3] == _board[6])
+	{
+		state = _board[0];
+	}
+	else if (_board[1] == _board[4] && _board[4] == _board[7])
+	{
+		state = _board[1];
+	}
+	else if (_board[2] == _board[5] && _board[5] == _board[8])
+	{
+		state = _board[2];
+	}
+	else if (_board[0] == _board[4] && _board[4] == _board[8])
+	{
+		state = _board[0];
+	}
+	else if (_board[2] == _board[4] && _board[4] == _board[6])
+	{
+		state = _board[2];
+	}
 }
 
 

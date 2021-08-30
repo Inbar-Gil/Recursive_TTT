@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.hpp
+iostream
+-
+
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/main.cpp
+iostream
+-
+Board.hpp
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.hpp
+
