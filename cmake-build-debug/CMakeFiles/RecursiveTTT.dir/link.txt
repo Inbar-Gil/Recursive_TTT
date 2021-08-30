@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/RecursiveTTT.dir/main.cpp.o  -o RecursiveTTT.exe -Wl,--out-implib,libRecursiveTTT.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
