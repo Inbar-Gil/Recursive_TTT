@@ -6,11 +6,17 @@
 int main()
 {
 	Board b = Board();
+	b.printBoard();
 	b.playMove(X, 0);
-	std::cout << b.updateScore() << std::endl;
-	b.playMove(X, 1);
-	std::cout << b.updateScore() << std::endl;
+	b.playMove(O, 1);
 	b.playMove(X, 2);
-	std::cout << b.updateScore() << std::endl;
+	b.playMove(X, 3);
+	b.playMove(X, 4);
+	b.playMove(O, 5);
+	b.playMove(O, 6);
+	b.playMove(X, 7);
+	b.playMove(X, 8);
 	return 0;
+
+
 }

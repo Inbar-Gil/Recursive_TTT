@@ -2,23 +2,39 @@
 // Created by t8747382 on 30/08/2021.
 //
 #include <iostream>
+#include <map>
+#include <string>
 
 #ifndef RECURSIVETTT_BOARD_HPP
 #define RECURSIVETTT_BOARD_HPP
+
 #define BOARD_SIZE 9
 #define WIN_SCORE 100
 #define TIE_SCORE 50
 
-
 enum Move
 {
-	X = 1, O = 2
+	X = 1, O = -1, N = 0
 };
 
 enum State
 {
 	W = 1, T = 3, L = 2, E = 0
 };
+
+std::ostream &operator<<(std::ostream &out, const Move value)
+{
+	static std::map<Move, std::string> strings;
+	if (strings.empty())
+	{
+#define INSERT_ELEMENT(p) strings[p] = #p
+		INSERT_ELEMENT(X);
+		INSERT_ELEMENT(O);
+		strings[N] = " ";
+#undef INSERT_ELEMENT
+	}
+	return out << strings[value];
+}
 
 
 class Board
@@ -42,6 +58,8 @@ public:
 	int playMove(Move nextMove, int loc);
 
 	int updateScore();
+
+	void printBoard();
 
 };
 
@@ -79,6 +97,7 @@ int Board::playMove(Move nextMove, int loc)
 	}
 	_board[loc] = nextMove;
 	_updateState();
+	printBoard();
 	return state;
 }
 
@@ -108,21 +127,21 @@ int Board::updateScore()
 	{
 		for (int i = 0; i < BOARD_SIZE; i++)
 		{
-			int taken = (int) (bool) (_board[i]);
+			int scoreFactor = (int) (bool) (_board[i]) * _board[i];
 			if (!(i % 2))
 			{
 				if (i == 4)
 				{
-					score = score + taken * 4;
+					score = score + scoreFactor * 4;
 				}
 				else
 				{
-					score = score + taken * 3;
+					score = score + scoreFactor * 3;
 				}
 			}
 			else
 			{
-				score = score + taken * 2;
+				score = score + scoreFactor * 2;
 			}
 		}
 	}
@@ -151,15 +170,15 @@ void Board::_updateState()
 	}
 	else if (_board[3] == _board[4] && _board[4] == _board[5])
 	{
-		state = _board[3];
+		state = _board[4];
 	}
 	else if (_board[6] == _board[7] && _board[7] == _board[8])
 	{
-		state = _board[6];
+		state = _board[7];
 	}
 	else if (_board[0] == _board[3] && _board[3] == _board[6])
 	{
-		state = _board[0];
+		state = _board[3];
 	}
 	else if (_board[1] == _board[4] && _board[4] == _board[7])
 	{
@@ -171,13 +190,61 @@ void Board::_updateState()
 	}
 	else if (_board[0] == _board[4] && _board[4] == _board[8])
 	{
-		state = _board[0];
+		state = _board[8];
 	}
 	else if (_board[2] == _board[4] && _board[4] == _board[6])
 	{
-		state = _board[2];
+		state = _board[6];
 	}
 }
 
+void Board::printBoard()
+{
+	std::cout << "********************" << std::endl;
+	for (int i = 0; i < 3; ++i)
+	{
+		if (i != 2)
+		{
+			std::cout << "\u0332";
+		}
+		std::cout << (Move) _board[3 * i];
+		for (int j = 1; j < 3; ++j)
+		{
+			std::cout << "|";
+			if (i != 2)
+			{
+				std::cout << "\u0332";
+			}
+			std::cout << (Move) _board[3 * i + j];
+		}
+		std::cout << std::endl;
+	}
+	switch (state)
+	{
+		case W:
+		{
+			std::cout << "X Wins!" << std::endl;
+			break;
+		}
+		case T:
+		{
+			std::cout << "It's a Tie!" << std::endl;
+			break;
+		}
+		case L:
+		{
+			std::cout << "O Wins!" << std::endl;
+			break;
+		}
+		case E:
+		{
+			std::cout << "Keep Playing" << std::endl;
+			break;
+		}
+
+	}
+	std::cout << "********************" << std::endl;
+
+}
 
 #endif //RECURSIVETTT_BOARD_HPP
