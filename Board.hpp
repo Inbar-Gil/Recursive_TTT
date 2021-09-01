@@ -11,6 +11,7 @@
 #define BOARD_SIZE 9
 #define WIN_SCORE 100
 #define TIE_SCORE 50
+#define UNDERSCORE "\u0332"
 
 enum Move
 {
@@ -205,7 +206,7 @@ void Board::printBoard()
 	{
 		if (i != 2)
 		{
-			std::cout << "\u0332";
+			std::cout << UNDERSCORE;
 		}
 		std::cout << (Move) _board[3 * i];
 		for (int j = 1; j < 3; ++j)
@@ -213,7 +214,7 @@ void Board::printBoard()
 			std::cout << "|";
 			if (i != 2)
 			{
-				std::cout << "\u0332";
+				std::cout << UNDERSCORE;
 			}
 			std::cout << (Move) _board[3 * i + j];
 		}
