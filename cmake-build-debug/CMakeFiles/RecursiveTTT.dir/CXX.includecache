@@ -9,6 +9,10 @@
 /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.hpp
 iostream
 -
+map
+-
+string
+-
 
 /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/main.cpp
 iostream
