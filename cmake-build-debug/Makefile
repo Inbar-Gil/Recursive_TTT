@@ -123,6 +123,33 @@ RecursiveTTT/fast:
 	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/build
 .PHONY : RecursiveTTT/fast
 
+Board.o: Board.cpp.o
+
+.PHONY : Board.o
+
+# target to build an object file
+Board.cpp.o:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/Board.cpp.o
+.PHONY : Board.cpp.o
+
+Board.i: Board.cpp.i
+
+.PHONY : Board.i
+
+# target to preprocess a source file
+Board.cpp.i:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/Board.cpp.i
+.PHONY : Board.cpp.i
+
+Board.s: Board.cpp.s
+
+.PHONY : Board.s
+
+# target to generate assembly for a file
+Board.cpp.s:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/Board.cpp.s
+.PHONY : Board.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... RecursiveTTT"
 	@echo "... edit_cache"
+	@echo "... Board.o"
+	@echo "... Board.i"
+	@echo "... Board.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

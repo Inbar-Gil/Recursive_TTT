@@ -7,7 +7,7 @@ int main()
 {
 	Board b = Board();
 	b.printBoard();
-	b.playMove(X, 0);
+	b.playMove(O, 0);
 	b.playMove(O, 1);
 	b.playMove(X, 2);
 	b.playMove(X, 3);
