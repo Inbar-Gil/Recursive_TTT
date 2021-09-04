@@ -2,14 +2,25 @@
 // Created by t8747382 on 30/08/2021.
 //
 #include <iostream>
+#include <map>
+#include <string>
 
 #ifndef RECURSIVETTT_BOARD_HPP
 #define RECURSIVETTT_BOARD_HPP
 
+#define BOARD_SIZE 9
+#define WIN_SCORE 100
+#define TIE_SCORE 50
+#define UNDERSCORE "\u0332"
 
 enum Move
 {
-	X = 1, O = -1
+	X = 1, O = -1, N = 0
+};
+
+enum State
+{
+	W = 1, TW = 1, TL = -1, L = -1, E = 0
 };
 
 
@@ -20,72 +31,26 @@ private:
 
 	int _count_X();
 
-	int _count_O();
+	void _updateState();
 
 public:
-	int state;
+	State state;
 
 	int score;
-
-	void playMove(Move nextMove, int loc);
-
-	int updateScore();
 
 	Board();
 
 	~Board();
 
+	State playMove(Move nextMove, int loc);
+
+	bool isTaken(int loc);
+
+	int updateScore();
+
+	void printBoard();
+
 };
-
-
-int Board::_count_X()
-{
-	int counter = 0;
-	for (int i = 0; i < 9; i++)
-	{
-		if (_board[i] == Move(X))
-		{
-			int x = 5;
-		}
-	}
-	return 0;
-}
-
-int Board::_count_O()
-{
-	return 0;
-}
-
-void Board::playMove(Move nextMove, int loc)
-{
-	std::cout << nextMove;
-	_board[loc] = nextMove;
-}
-
-Board::Board()
-{
-	_board = new int[9 * sizeof(int)];
-	state = 0;
-	score = 0;
-}
-
-Board::~Board()
-{
-	delete _board;
-}
-
-int Board::updateScore()
-{
-	if (state == 1)
-	{
-		return 100;
-	}
-	if (state == -1)
-	{
-		
-	}
-	return 0;
-}
 
 
 #endif //RECURSIVETTT_BOARD_HPP

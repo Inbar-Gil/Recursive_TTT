@@ -1,10 +1,27 @@
 #include <iostream>
 #include "Board.hpp"
+#include "RecursiveBoard.hpp"
+#include "RecursiveTTT.hpp"
 
-
+using namespace std;
 
 int main()
 {
-	std::cout << Move(X) << std::endl;
+	int recDepth = 11;
+	while (true)
+	{
+		cout << "Enter Recursive Depth (number between 1 and 10)" << endl;
+		cin >> recDepth;
+		if (recDepth <= 10 && recDepth > 0)
+		{
+			break;
+		}
+	}
+	RecursiveTTT game = RecursiveTTT();
+	game.startGame(recDepth);
+<<<<<<< HEAD
+=======
+
+>>>>>>> BoardClass
 	return 0;
 }

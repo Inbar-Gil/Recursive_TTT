@@ -70,17 +70,62 @@ CMakeFiles/RecursiveTTT.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RecursiveTTT.dir/main.cpp.s"
 	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/main.cpp -o CMakeFiles/RecursiveTTT.dir/main.cpp.s
 
+CMakeFiles/RecursiveTTT.dir/Board.cpp.o: CMakeFiles/RecursiveTTT.dir/flags.make
+CMakeFiles/RecursiveTTT.dir/Board.cpp.o: ../Board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RecursiveTTT.dir/Board.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RecursiveTTT.dir/Board.cpp.o -c /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.cpp
+
+CMakeFiles/RecursiveTTT.dir/Board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RecursiveTTT.dir/Board.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.cpp > CMakeFiles/RecursiveTTT.dir/Board.cpp.i
+
+CMakeFiles/RecursiveTTT.dir/Board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RecursiveTTT.dir/Board.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.cpp -o CMakeFiles/RecursiveTTT.dir/Board.cpp.s
+
+CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o: CMakeFiles/RecursiveTTT.dir/flags.make
+CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o: ../RecursiveBoard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o -c /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveBoard.cpp
+
+CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveBoard.cpp > CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.i
+
+CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveBoard.cpp -o CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.s
+
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o: CMakeFiles/RecursiveTTT.dir/flags.make
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o: ../RecursiveTTT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o -c /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveTTT.cpp
+
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveTTT.cpp > CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.i
+
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveTTT.cpp -o CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.s
+
 # Object files for target RecursiveTTT
 RecursiveTTT_OBJECTS = \
-"CMakeFiles/RecursiveTTT.dir/main.cpp.o"
+"CMakeFiles/RecursiveTTT.dir/main.cpp.o" \
+"CMakeFiles/RecursiveTTT.dir/Board.cpp.o" \
+"CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o" \
+"CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o"
 
 # External object files for target RecursiveTTT
 RecursiveTTT_EXTERNAL_OBJECTS =
 
 RecursiveTTT.exe: CMakeFiles/RecursiveTTT.dir/main.cpp.o
+RecursiveTTT.exe: CMakeFiles/RecursiveTTT.dir/Board.cpp.o
+RecursiveTTT.exe: CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o
+RecursiveTTT.exe: CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o
 RecursiveTTT.exe: CMakeFiles/RecursiveTTT.dir/build.make
 RecursiveTTT.exe: CMakeFiles/RecursiveTTT.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable RecursiveTTT.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable RecursiveTTT.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RecursiveTTT.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

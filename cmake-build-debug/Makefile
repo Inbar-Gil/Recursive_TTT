@@ -123,6 +123,87 @@ RecursiveTTT/fast:
 	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/build
 .PHONY : RecursiveTTT/fast
 
+Board.o: Board.cpp.o
+
+.PHONY : Board.o
+
+# target to build an object file
+Board.cpp.o:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/Board.cpp.o
+.PHONY : Board.cpp.o
+
+Board.i: Board.cpp.i
+
+.PHONY : Board.i
+
+# target to preprocess a source file
+Board.cpp.i:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/Board.cpp.i
+.PHONY : Board.cpp.i
+
+Board.s: Board.cpp.s
+
+.PHONY : Board.s
+
+# target to generate assembly for a file
+Board.cpp.s:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/Board.cpp.s
+.PHONY : Board.cpp.s
+
+RecursiveBoard.o: RecursiveBoard.cpp.o
+
+.PHONY : RecursiveBoard.o
+
+# target to build an object file
+RecursiveBoard.cpp.o:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o
+.PHONY : RecursiveBoard.cpp.o
+
+RecursiveBoard.i: RecursiveBoard.cpp.i
+
+.PHONY : RecursiveBoard.i
+
+# target to preprocess a source file
+RecursiveBoard.cpp.i:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.i
+.PHONY : RecursiveBoard.cpp.i
+
+RecursiveBoard.s: RecursiveBoard.cpp.s
+
+.PHONY : RecursiveBoard.s
+
+# target to generate assembly for a file
+RecursiveBoard.cpp.s:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.s
+.PHONY : RecursiveBoard.cpp.s
+
+RecursiveTTT.o: RecursiveTTT.cpp.o
+
+.PHONY : RecursiveTTT.o
+
+# target to build an object file
+RecursiveTTT.cpp.o:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o
+.PHONY : RecursiveTTT.cpp.o
+
+RecursiveTTT.i: RecursiveTTT.cpp.i
+
+.PHONY : RecursiveTTT.i
+
+# target to preprocess a source file
+RecursiveTTT.cpp.i:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.i
+.PHONY : RecursiveTTT.cpp.i
+
+RecursiveTTT.s: RecursiveTTT.cpp.s
+
+.PHONY : RecursiveTTT.s
+
+# target to generate assembly for a file
+RecursiveTTT.cpp.s:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.s
+.PHONY : RecursiveTTT.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... RecursiveTTT"
 	@echo "... edit_cache"
+	@echo "... Board.o"
+	@echo "... Board.i"
+	@echo "... Board.s"
+	@echo "... RecursiveBoard.o"
+	@echo "... RecursiveBoard.i"
+	@echo "... RecursiveBoard.s"
+	@echo "... RecursiveTTT.o"
+	@echo "... RecursiveTTT.i"
+	@echo "... RecursiveTTT.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

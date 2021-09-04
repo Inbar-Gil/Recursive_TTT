@@ -3,4 +3,4 @@ project(RecursiveTTT)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(RecursiveTTT main.cpp Board.hpp)
+add_executable(RecursiveTTT main.cpp Board.hpp Board.cpp RecursiveBoard.hpp RecursiveBoard.cpp RecursiveTTT.cpp RecursiveTTT.hpp)
