@@ -20,14 +20,19 @@ std::ostream &operator<<(std::ostream &out, const Move value)
 
 Board::Board()
 {
-	_board = new int[BOARD_SIZE * sizeof(int)];
-	state = 0;
+	_board = new int[BOARD_SIZE];
+	for (int i = 0; i < BOARD_SIZE; ++i)
+	{
+		_board[i] = 0;
+	}
+	state = E;
 	score = 0;
 }
 
 Board::~Board()
 {
-	delete _board;
+	delete[] _board;
+	_board = nullptr;
 }
 
 int Board::_count_X()
@@ -43,12 +48,8 @@ int Board::_count_X()
 	return counter;
 }
 
-int Board::playMove(Move nextMove, int loc)
+State Board::playMove(Move nextMove, int loc)
 {
-	if (_board[loc])
-	{
-		return -1;
-	}
 	_board[loc] = nextMove;
 	_updateState();
 	printBoard();
@@ -66,7 +67,7 @@ int Board::updateScore()
 	{
 		score = -WIN_SCORE;
 	}
-	else if (state == T)
+	else if (state == TW || state == TL)
 	{
 		if (_count_X() >= 5)
 		{
@@ -105,37 +106,41 @@ int Board::updateScore()
 void Board::_updateState()
 {
 	int i = 0;
+	if (state)
+	{
+		return;
+	}
 	if (_board[0] == _board[1] && _board[1] == _board[2])
 	{
-		state = _board[0];
+		state = (State) _board[0];
 	}
 	else if (_board[3] == _board[4] && _board[4] == _board[5])
 	{
-		state = _board[4];
+		state = (State) _board[4];
 	}
 	else if (_board[6] == _board[7] && _board[7] == _board[8])
 	{
-		state = _board[7];
+		state = (State) _board[7];
 	}
 	else if (_board[0] == _board[3] && _board[3] == _board[6])
 	{
-		state = _board[3];
+		state = (State) _board[3];
 	}
 	else if (_board[1] == _board[4] && _board[4] == _board[7])
 	{
-		state = _board[1];
+		state = (State) _board[1];
 	}
 	else if (_board[2] == _board[5] && _board[5] == _board[8])
 	{
-		state = _board[2];
+		state = (State) _board[2];
 	}
 	else if (_board[0] == _board[4] && _board[4] == _board[8])
 	{
-		state = _board[8];
+		state = (State) _board[8];
 	}
 	else if (_board[2] == _board[4] && _board[4] == _board[6])
 	{
-		state = _board[6];
+		state = (State) _board[6];
 	}
 	if (!state)
 	{
@@ -143,7 +148,14 @@ void Board::_updateState()
 		{
 			if (i == 9)
 			{
-				state = T;  // if all squares are full then it's considered a Tie (even if it's not)
+				if (_count_X() >= 5)
+				{
+					state = TW;
+				}
+				else
+				{
+					state = TL;
+				}
 				return;
 			}
 			if (!_board[i])  //breaks if any square is empty
@@ -183,11 +195,6 @@ void Board::printBoard()
 			std::cout << "X Wins!" << std::endl;
 			break;
 		}
-		case T:
-		{
-			std::cout << "It's a Tie!" << std::endl;
-			break;
-		}
 		case L:
 		{
 			std::cout << "O Wins!" << std::endl;
@@ -202,5 +209,10 @@ void Board::printBoard()
 	}
 	std::cout << "********************" << std::endl;
 
+}
+
+bool Board::isTaken(int loc)
+{
+	return (bool) _board[loc];
 }
 

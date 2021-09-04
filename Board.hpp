@@ -20,7 +20,7 @@ enum Move
 
 enum State
 {
-	W = 1, T = 3, L = 2, E = 0
+	W = 1, TW = 1, TL = -1, L = -1, E = 0
 };
 
 
@@ -34,7 +34,7 @@ private:
 	void _updateState();
 
 public:
-	int state;
+	State state;
 
 	int score;
 
@@ -42,7 +42,9 @@ public:
 
 	~Board();
 
-	int playMove(Move nextMove, int loc);
+	State playMove(Move nextMove, int loc);
+
+	bool isTaken(int loc);
 
 	int updateScore();
 
