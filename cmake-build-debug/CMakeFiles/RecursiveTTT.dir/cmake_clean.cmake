@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/RecursiveTTT.dir/Board.cpp.o"
   "CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o"
+  "CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o"
   "CMakeFiles/RecursiveTTT.dir/main.cpp.o"
   "RecursiveTTT.exe"
   "RecursiveTTT.pdb"

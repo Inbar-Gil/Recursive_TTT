@@ -92,6 +92,12 @@
 		<Unit filename="/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveBoard.hpp">
 			<Option target="RecursiveTTT"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveTTT.cpp">
+			<Option target="RecursiveTTT"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveTTT.hpp">
+			<Option target="RecursiveTTT"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/main.cpp">
 			<Option target="RecursiveTTT"/>
 		</Unit>

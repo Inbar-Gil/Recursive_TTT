@@ -1,0 +1,15 @@
+//
+// Created by t8747382 on 04/09/2021.
+//
+
+#ifndef RECURSIVETTT_RECURSIVETTT_HPP
+#define RECURSIVETTT_RECURSIVETTT_HPP
+
+
+class RecursiveTTT
+{
+
+};
+
+
+#endif //RECURSIVETTT_RECURSIVETTT_HPP

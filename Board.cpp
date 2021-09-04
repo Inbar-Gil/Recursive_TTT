@@ -51,7 +51,6 @@ State Board::playMove(Move nextMove, int loc)
 {
 	_board[loc] = nextMove;
 	_updateState();
-	printBoard();
 	return state;
 }
 

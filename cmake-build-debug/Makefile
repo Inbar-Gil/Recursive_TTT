@@ -177,6 +177,33 @@ RecursiveBoard.cpp.s:
 	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.s
 .PHONY : RecursiveBoard.cpp.s
 
+RecursiveTTT.o: RecursiveTTT.cpp.o
+
+.PHONY : RecursiveTTT.o
+
+# target to build an object file
+RecursiveTTT.cpp.o:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o
+.PHONY : RecursiveTTT.cpp.o
+
+RecursiveTTT.i: RecursiveTTT.cpp.i
+
+.PHONY : RecursiveTTT.i
+
+# target to preprocess a source file
+RecursiveTTT.cpp.i:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.i
+.PHONY : RecursiveTTT.cpp.i
+
+RecursiveTTT.s: RecursiveTTT.cpp.s
+
+.PHONY : RecursiveTTT.s
+
+# target to generate assembly for a file
+RecursiveTTT.cpp.s:
+	$(MAKE) -f CMakeFiles/RecursiveTTT.dir/build.make CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.s
+.PHONY : RecursiveTTT.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -219,6 +246,9 @@ help:
 	@echo "... RecursiveBoard.o"
 	@echo "... RecursiveBoard.i"
 	@echo "... RecursiveBoard.s"
+	@echo "... RecursiveTTT.o"
+	@echo "... RecursiveTTT.i"
+	@echo "... RecursiveTTT.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

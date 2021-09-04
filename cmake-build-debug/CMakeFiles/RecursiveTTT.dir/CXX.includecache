@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.cpp
-Board.hpp
-/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.hpp
-
 /cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.hpp
 iostream
 -
@@ -17,4 +13,18 @@ map
 -
 string
 -
+
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveBoard.hpp
+Board.hpp
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.hpp
+vector
+-
+
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/main.cpp
+iostream
+-
+Board.hpp
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/Board.hpp
+RecursiveBoard.hpp
+/cygdrive/c/Users/t8747382/Desktop/Recursive_TTT/RecursiveBoard.hpp
 
