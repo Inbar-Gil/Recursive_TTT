@@ -9,6 +9,4 @@ int main()
 {
 	RecursiveBoard rB = RecursiveBoard(2);
 	return 0;
-
-
 }

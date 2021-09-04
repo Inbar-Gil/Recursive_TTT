@@ -19,7 +19,7 @@ RecursiveBoard::RecursiveBoard()
 {
 	_recursionDepth = 1;
 	_bigBoard = new Board;
-	_smallBoards = nullptr;
+	_smallBoards = std::vector<RecursiveBoard *>();
 	_lastMove = nullptr;
 	state = E;
 }
@@ -30,15 +30,15 @@ RecursiveBoard::RecursiveBoard(int recDepth)
 	_bigBoard = new Board;
 	if (recDepth == 1)
 	{
-		_smallBoards = nullptr;
+		_smallBoards = std::vector<RecursiveBoard *>();
 		_lastMove = nullptr;
 	}
 	else
 	{
-		_smallBoards = new RecursiveBoard[BOARD_SIZE];
+		_smallBoards = std::vector<RecursiveBoard *>(BOARD_SIZE);
 		for (int i = 0; i < BOARD_SIZE; ++i)
 		{
-			_smallBoards[i] = RecursiveBoard(_recursionDepth - 1);
+			_smallBoards[i] = new RecursiveBoard(_recursionDepth - 1);
 		}
 		_lastMove = new int[_recursionDepth];
 		for (int i = 0; i < _recursionDepth; ++i)
@@ -51,7 +51,11 @@ RecursiveBoard::RecursiveBoard(int recDepth)
 
 RecursiveBoard::~RecursiveBoard()
 {
-	delete[] _smallBoards;
+	for (auto & _smallBoard : _smallBoards)
+	{
+		delete _smallBoard;
+	}
+	_smallBoards.clear();
 	delete[] _lastMove;
 	delete _bigBoard;
 }
@@ -72,9 +76,9 @@ State RecursiveBoard::playMove(Move nextMove, int *locs)
 	else
 	{
 		int *reducedLocs = reduceArray(locs, _recursionDepth);
-		auto newState = (State) _smallBoards[locs[0]].playMove(nextMove, reducedLocs);
+		auto newState = (State) _smallBoards[locs[0]]->playMove(nextMove, reducedLocs);
 
-		Move bigMove = (Move) _smallBoards[locs[0]].state;
+		Move bigMove = (Move) _smallBoards[locs[0]]->state;
 		(*_bigBoard).playMove(bigMove, locs[0]);
 	}
 	_updateState();
@@ -97,7 +101,7 @@ bool RecursiveBoard::_isMovePossible(int *locs)
 		return false;
 	}
 	int *reducedLocs = reduceArray(locs, _recursionDepth);
-	return _smallBoards[locs[0]]._isMovePossible(reducedLocs);
+	return _smallBoards[locs[0]]->_isMovePossible(reducedLocs);
 
 }
 

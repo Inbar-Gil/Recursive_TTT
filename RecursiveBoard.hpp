@@ -2,6 +2,8 @@
 // Created by t8747382 on 02/09/2021.
 //
 #include "Board.hpp"
+#include <vector>
+
 
 #ifndef RECURSIVETTT_RECURSIVEBOARD_HPP
 #define RECURSIVETTT_RECURSIVEBOARD_HPP
@@ -15,7 +17,7 @@ private:
 
 	Board *_bigBoard;
 
-	RecursiveBoard *_smallBoards;
+	std::vector<RecursiveBoard *> _smallBoards;
 
 	int *_lastMove;
 

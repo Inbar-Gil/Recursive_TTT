@@ -32,7 +32,6 @@ Board::Board()
 Board::~Board()
 {
 	delete[] _board;
-	_board = nullptr;
 }
 
 int Board::_count_X()
