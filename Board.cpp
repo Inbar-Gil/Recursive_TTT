@@ -186,25 +186,6 @@ void Board::printBoard()
 		}
 		std::cout << std::endl;
 	}
-	switch (state)
-	{
-		case W:
-		{
-			std::cout << "X Wins!" << std::endl;
-			break;
-		}
-		case L:
-		{
-			std::cout << "O Wins!" << std::endl;
-			break;
-		}
-		case E:
-		{
-			std::cout << "Keep Playing" << std::endl;
-			break;
-		}
-
-	}
 	std::cout << "********************" << std::endl;
 
 }

@@ -21,11 +21,11 @@ private:
 
 	int *_lastMove;
 
+
 	void _updateState();
 
 	bool _isMovePossible(int *locs);
 
-	static void _setupChart();
 
 
 public:
@@ -39,9 +39,14 @@ public:
 
 	State playMove(Move nextMove, int *locs);
 
+	void updateLastMove();
+
 	void printBoards();
 
 	bool isMoveLegal(int *locs);
+
+	bool _isTaken(std::vector<int> locs);
+
 
 };
 

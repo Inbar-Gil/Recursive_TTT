@@ -1,34 +1,24 @@
 #include <iostream>
 #include "Board.hpp"
 #include "RecursiveBoard.hpp"
+#include "RecursiveTTT.hpp"
 
-
-
+using namespace std;
 
 int main()
 {
-	RecursiveBoard rB = RecursiveBoard(2);
-	rB.printBoards();
-	int * moves = new int[2]();
-	rB.isMoveLegal(moves);
-//	rB.playMove(X, moves);
-//	moves[1] = 4;
-//	rB.playMove(X, moves);
-//	moves[1] = 8;
-//	rB.playMove(X, moves);
-//	moves[0] = 2;
-//	rB.playMove(X, moves);
-//	moves[1] = 4;
-//	rB.playMove(X, moves);
-//	moves[1] = 0;
-//	rB.playMove(X, moves);
-//	moves[0] = 1;
-//	rB.playMove(X, moves);
-//	moves[1] = 4;
-//	rB.playMove(X, moves);
-//	moves[1] = 8;
-//	rB.playMove(X, moves);
-	rB.printBoards();
-	delete[] moves;
+	int recDepth = 11;
+	while (true)
+	{
+		cout << "Enter Recursive Depth (number between 1 and 10)" << endl;
+		cin >> recDepth;
+		if (recDepth <= 10 && recDepth > 0)
+		{
+			break;
+		}
+	}
+	RecursiveTTT game = RecursiveTTT();
+	game.startGame(recDepth);
+
 	return 0;
 }

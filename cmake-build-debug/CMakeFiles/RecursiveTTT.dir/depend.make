@@ -8,7 +8,13 @@ CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o: ../Board.hpp
 CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o: ../RecursiveBoard.cpp
 CMakeFiles/RecursiveTTT.dir/RecursiveBoard.cpp.o: ../RecursiveBoard.hpp
 
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o: ../Board.hpp
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o: ../RecursiveBoard.hpp
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o: ../RecursiveTTT.cpp
+CMakeFiles/RecursiveTTT.dir/RecursiveTTT.cpp.o: ../RecursiveTTT.hpp
+
 CMakeFiles/RecursiveTTT.dir/main.cpp.o: ../Board.hpp
 CMakeFiles/RecursiveTTT.dir/main.cpp.o: ../RecursiveBoard.hpp
+CMakeFiles/RecursiveTTT.dir/main.cpp.o: ../RecursiveTTT.hpp
 CMakeFiles/RecursiveTTT.dir/main.cpp.o: ../main.cpp
 
