@@ -21,20 +21,13 @@ RecursiveTTT::~RecursiveTTT()
 
 void RecursiveTTT::startGame(int recDepth)
 {
-<<<<<<< HEAD
-
-=======
->>>>>>> BoardClass
 	_gameBoard = new RecursiveBoard(recDepth);
 	_recursionDepth = recDepth;
 	bool gameEnd = false;
 	while (!gameEnd)
 	{
 		int *locs = getInput();
-<<<<<<< HEAD
 		system("clear");
-=======
->>>>>>> BoardClass
 		if (locs == nullptr)
 		{
 			continue;
