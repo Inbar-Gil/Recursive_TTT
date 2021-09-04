@@ -19,5 +19,9 @@ int main()
 	}
 	RecursiveTTT game = RecursiveTTT();
 	game.startGame(recDepth);
+<<<<<<< HEAD
+=======
+
+>>>>>>> BoardClass
 	return 0;
 }
