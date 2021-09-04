@@ -5,9 +5,23 @@
 #ifndef RECURSIVETTT_RECURSIVETTT_HPP
 #define RECURSIVETTT_RECURSIVETTT_HPP
 
+#include "RecursiveBoard.hpp"
+#include <string>
+
 
 class RecursiveTTT
 {
+private:
+	RecursiveBoard *_gameBoard;
+	int _recursionDepth;
+	State _gameState;
+	Move _turn;
+
+public:
+	RecursiveTTT();
+	~RecursiveTTT();
+	void startGame(int recDepth);
+	int *getInput();
 
 };
 

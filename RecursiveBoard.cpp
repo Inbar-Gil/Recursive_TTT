@@ -28,7 +28,8 @@ RecursiveBoard::RecursiveBoard(int recDepth)
 {
 	_recursionDepth = recDepth;
 	_bigBoard = new Board;
-	if (recDepth == 1)
+
+	if (recDepth <= 1)
 	{
 		_smallBoards = std::vector<RecursiveBoard *>();
 		_lastMove = nullptr;
@@ -51,7 +52,7 @@ RecursiveBoard::RecursiveBoard(int recDepth)
 
 RecursiveBoard::~RecursiveBoard()
 {
-	for (auto & _smallBoard : _smallBoards)
+	for (auto &_smallBoard : _smallBoards)
 	{
 		delete _smallBoard;
 	}
@@ -71,7 +72,6 @@ State RecursiveBoard::playMove(Move nextMove, int *locs)
 	if (_recursionDepth == 1)
 	{
 		(*_bigBoard).playMove(nextMove, locs[0]);
-
 	}
 	else
 	{
@@ -79,7 +79,11 @@ State RecursiveBoard::playMove(Move nextMove, int *locs)
 		_smallBoards[locs[0]]->playMove(nextMove, reducedLocs);
 		Move bigMove = (Move) _smallBoards[locs[0]]->state;
 		(*_bigBoard).playMove(bigMove, locs[0]);
-		delete [] reducedLocs;
+		delete[] reducedLocs;
+		for (int i = 0; i < _recursionDepth; ++i)
+		{
+			_lastMove[i] = locs[i];
+		}
 	}
 	_updateState();
 	return state;
@@ -96,7 +100,7 @@ void RecursiveBoard::printBoards()
 	{
 		std::cout << std::endl << std::endl << std::endl << "####################" << std::endl;
 	}
-	for (auto & _smallBoard : _smallBoards)
+	for (auto &_smallBoard : _smallBoards)
 	{
 		_smallBoard->printBoards();
 	}
@@ -135,10 +139,33 @@ bool RecursiveBoard::isMoveLegal(int *locs)
 	return false;
 }
 
-void RecursiveBoard::_setupChart()
+
+void RecursiveBoard::updateLastMove()
 {
+	for (int i = _recursionDepth - 1; i > 0; --i)
+	{
+		std::vector<int> vect;
+		for (int j = i; j > 0; --j)
+		{
+			vect.push_back(_lastMove[j]);
+		}
+		if (_isTaken(vect))
+		{
+			_lastMove[i] = -1;
+		}
+	}
+}
 
-
+bool RecursiveBoard::_isTaken(std::vector<int> locs)
+{
+	int loc = locs.back();
+	if (locs.size() == 1)
+	{
+		locs.clear();
+		return _bigBoard->isTaken(loc);
+	}
+	locs.pop_back();
+	return _smallBoards[loc]->_isTaken(locs);
 }
 
 
